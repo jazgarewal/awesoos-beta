@@ -8,7 +8,7 @@ Parse.Cloud.define('hello', function(req, res) {
 });
 
 Parse.Cloud.define('sendAMessage', function(req, res) {
-	Parse.Cloud.httpRequest({
+	return Parse.Cloud.httpRequest({
 		method: "POST",
 		url:"https://" + accountSid + ":" + authToken + "@api.twilio.com:8443/2010-04-01/Accounts/" + accountSid + "/Messages.json",
 		to:"+15209065667",
