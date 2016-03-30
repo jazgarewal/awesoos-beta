@@ -25,12 +25,13 @@ Parse.Cloud.define('sendAMessage', function(req, res) {
 });
 
 Parse.Cloud.define('sendATestMessage', function(req, res){
-  twilio.sendSMS({
-    From: "test",
-    To: "5209065667",
-    Body: "Test message"
-  }, {
-    success: function(httpResponse) {response.success("Sent!");},
-    error: function(httpResponse) {response.error("Error!");}
-  });
+  res.success("console success");
+  // twilio.sendSMS({
+  //   From: "test",
+  //   To: "5209065667",
+  //   Body: "Test message"
+  // }, {
+  //   success: function(httpResponse) {response.success("Sent!");},
+  //   error: function(httpResponse) {response.error("Error!");}
+  // });
 });
