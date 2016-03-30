@@ -4,7 +4,7 @@ var authToken = process.env.TWILIO_AUTH_TOKEN;
 var sendingNumber = process.env.TWILIO_NUMBER;
 
 Parse.Cloud.define('hello', function(req, res) {
-  res.success('Hi');
+  res.success("https://" + accountSid + ":" + authToken + "@api.twilio.com:8443/2010-04-01/Accounts/" + accountSid + "/Messages.json");
 });
 
 Parse.Cloud.define('sendAMessage', function(req, res) {
