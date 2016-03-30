@@ -15,9 +15,9 @@ Parse.Cloud.define('sendAMessage', function(req, res) {
 		From:"+15005550006",
 		Body:"Test"
 	}).then(function(httpResponse) {
-		console.log(httpResponse.text);
+		console.log("Success " + httpResponse.text);
 	},
 	function(httpResponse) {
-		console.log(httpResponse.text);
+		console.log("Error" + httpResponse.text);
 	});
 });
