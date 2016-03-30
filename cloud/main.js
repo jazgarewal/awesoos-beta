@@ -2,7 +2,7 @@ var secret = process.env.APP_SECRET;
 var accountSid = process.env.TWILIO_ACCOUNT_SID;
 var authToken = process.env.TWILIO_AUTH_TOKEN;
 var sendingNumber = process.env.TWILIO_NUMBER;
-// var twilio = require("twilio-node");
+var twilio = require("twilio");
 
 
 Parse.Cloud.define('hello', function(req, res) {
@@ -25,13 +25,12 @@ Parse.Cloud.define('sendAMessage', function(req, res) {
 });
 
 Parse.Cloud.define('sendATestMessage', function(req, res){
-  res.success("console success");
-  // twilio.sendSMS({
-  //   From: "test",
-  //   To: "5209065667",
-  //   Body: "Test message"
-  // }, {
-  //   success: function(httpResponse) {response.success("Sent!");},
-  //   error: function(httpResponse) {response.error("Error!");}
-  // });
+  twilio.sms.messages.create({
+    From: "test",
+    To: "5209065667",
+    Body: "Test message"
+  }, {
+    success: function(httpResponse) {response.success("Sent!");},
+    error: function(httpResponse) {response.error("Error!");}
+  });
 });
