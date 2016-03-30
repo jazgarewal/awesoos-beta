@@ -8,16 +8,17 @@ Parse.Cloud.define('hello', function(req, res) {
 });
 
 Parse.Cloud.define('sendAMessage', function(req, res) {
-	Parse.Cloud.httpRequest({
-		method: "POST",
-		url:"https://" + accountSid + ":" + authToken + "@api.twilio.com:8443/2010-04-01/Accounts/" + accountSid + "/Messages.json",
-		to:"+15209557918",
-		From:"+15005550006",
-		Body:"Test"
-	}).then(function(httpResponse) {
-		console.log("Success " + httpResponse.text);
-	},
-	function(httpResponse) {
-		console.log("Error" + httpResponse.text);
-	});
+  res.success("https://" + accountSid + ":" + authToken + "@api.twilio.com:8443/2010-04-01/Accounts/" + accountSid + "/Messages.json");
+	// Parse.Cloud.httpRequest({
+	// 	method: "POST",
+	// 	url:"https://" + accountSid + ":" + authToken + "@api.twilio.com:8443/2010-04-01/Accounts/" + accountSid + "/Messages.json",
+	// 	to:"+15209557918",
+	// 	From:"+15005550006",
+	// 	Body:"Test"
+	// }).then(function(httpResponse) {
+	// 	console.log("Success " + httpResponse.text);
+	// },
+	// function(httpResponse) {
+	// 	console.log("Error" + httpResponse.text);
+	// });
 });
