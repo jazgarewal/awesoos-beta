@@ -2,7 +2,7 @@ var secret = process.env.APP_SECRET;
 var accountSid = process.env.TWILIO_ACCOUNT_SID;
 var authToken = process.env.TWILIO_AUTH_TOKEN;
 var sendingNumber = process.env.TWILIO_NUMBER;
-var twilio = require("twilio-node");
+// var twilio = require("twilio-node");
 
 
 Parse.Cloud.define('hello', function(req, res) {
