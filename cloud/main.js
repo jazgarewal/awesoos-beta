@@ -28,8 +28,8 @@ Parse.Cloud.define('sendAMessage', function(req, res) {
 Parse.Cloud.define('sendATestMessage', function(req, res){
   client.sendMessage({
 
-    to: '+12677056297', // Any number Twilio can deliver to
-    from: '+15209065667', // A number you bought from Twilio and can use for outbound communication
+    to: '+15005550000', // Any number Twilio can deliver to
+    from: '+12677056297', // A number you bought from Twilio and can use for outbound communication
     body: 'word to your mother.' // body of the SMS message
 
 }, function(err, responseData) { //this function is executed when a response is received from Twilio
