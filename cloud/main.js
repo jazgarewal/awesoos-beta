@@ -42,9 +42,10 @@ Parse.Cloud.define('sendATestMessage', function(req, res){
 
         console.log(responseData.from); // outputs "+14506667788"
         console.log(responseData.body); // outputs "word to your mother."
-
+        res.success(responseData.from + " " + responseData.body);
     } else {
       console.log(err);
+      res.error(err);
     }
 
 });
