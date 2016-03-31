@@ -7,6 +7,7 @@ var twilio = require("twilio")('accountSid', 'authToken');
 
 Parse.Cloud.define('hello', function(req, res) {
   res.success("https://" + accountSid + ":" + authToken + "@api.twilio.com:8443/2010-04-01/Accounts/" + accountSid + "/Messages.json");
+  
 });
 
 Parse.Cloud.define('sendAMessage', function(req, res) {
