@@ -2,7 +2,7 @@ var secret = process.env.APP_SECRET;
 var accountSid = process.env.TWILIO_ACCOUNT_SID;
 var authToken = process.env.TWILIO_AUTH_TOKEN;
 var sendingNumber = process.env.TWILIO_NUMBER;
-var twilio = require("twilio");
+var twilio = require("twilio")('accountSid', 'authToken');
 
 
 Parse.Cloud.define('hello', function(req, res) {
@@ -25,7 +25,7 @@ Parse.Cloud.define('sendAMessage', function(req, res) {
 });
 
 Parse.Cloud.define('sendATestMessage', function(req, res){
-  twilio.messages.create({
+  twilio.createMessage({
     From: "+12677056297",
     To: "+15209065667",
     Body: "Test message"
