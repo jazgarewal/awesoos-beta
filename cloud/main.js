@@ -26,7 +26,7 @@ Parse.Cloud.define('sendAMessage', function(req, res) {
 
 Parse.Cloud.define('sendATestMessage', function(req, res){
   twilio.messages.create({
-    From: "test",
+    From: "+12677056297",
     To: "+15209065667",
     Body: "Test message"
   }, {
